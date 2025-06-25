@@ -1,0 +1,261 @@
+/* style.css - atualizado com redes sociais redondas e seção reorganizada */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* HEADER */
+.header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #e7401b;
+}
+
+.menu-mobile {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  background-color: #e7401b;
+  color: #fff;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+}
+
+/* SOBRE */
+.sobre {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* VEÍCULOS */
+.veiculos {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-img {
+  min-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 0.5rem;
+}
+
+.next {
+  right: 0.5rem;
+}
+
+/* CLIENTES */
+.clientes {
+  padding: 4rem 2rem;
+  background: #f1f1f1;
+  text-align: center;
+}
+
+.clientes-logos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* CONTATO */
+.contato {
+  padding: 4rem 2rem;
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+}
+
+.contato-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.redes {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.redes h3 {
+  margin-bottom: 1rem;
+}
+
+.redes a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 45px;
+  transition: background 0.3s;
+}
+
+.redes a:hover {
+  background-color: #e7401b;
+}
+
+.dados {
+  flex: 1 1 250px;
+  text-align: left;
+}
+
+.dados p {
+  margin: 0.5rem 0;
+}
+
+.dados i {
+  margin-right: 0.5rem;
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-mobile {
+    display: block;
+  }
+
+  .contato-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dados {
+    text-align: center;
+  }
+}
