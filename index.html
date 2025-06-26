@@ -11,8 +11,10 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <!-- Header -->
+
     <header class="header">
       <img src="img/logo.png" alt="Logo 3R" class="logo" />
       <nav class="nav">
@@ -26,6 +28,7 @@
     </header>
 
     <!-- Hero -->
+     
     <section class="hero">
       <div class="hero-text">
         <h1>Transporte com Conforto e Segurança</h1>
@@ -33,17 +36,14 @@
           Viagens particulares, empresariais e escolares com excelência no
           atendimento.
         </p>
-        <a
-          class="btn-whatsapp"
-          href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20transporte%20com%20a%203R%20Turismo."
-          target="_blank"
-        >
+        <a class="btn-whatsapp" href="#" target="_blank">
           <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
         </a>
       </div>
     </section>
 
     <!-- Sobre a Empresa -->
+
     <section class="sobre" id="empresa">
       <h2>Sobre a 3R</h2>
       <p>
@@ -54,6 +54,7 @@
     </section>
 
     <!-- Carrossel Veículos -->
+
     <section class="veiculos" id="servicos">
       <h2>Nossos Veículos</h2>
       <div class="carousel">
@@ -68,6 +69,7 @@
     </section>
 
     <!-- Clientes -->
+
     <section class="clientes">
       <h2>Nossos Clientes</h2>
       <div class="clientes-logos">
@@ -77,6 +79,7 @@
     </section>
 
     <!-- Contato -->
+
     <section class="contato" id="contato">
       <div class="contato-info">
         <div class="redes">
@@ -86,7 +89,7 @@
           <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
         <div class="dados">
-          <h3>Entre em Contato</h2>
+          <h3>Entre em Contato</h3>
           <p>Fale conosco para orçamento ou dúvidas</p>
           <p><i class="fas fa-phone"></i> (43) 99999-9999</p>
           <p><i class="fas fa-envelope"></i> contato@3rtransporte.com</p>
@@ -95,10 +98,37 @@
       </div>
     </section>
 
+    <!-- Popup do WhatsApp -->
+
+    <div class="whatsapp-popup-overlay" id="whatsapp-popup-overlay">
+      <div class="whatsapp-popup">
+        <button class="whatsapp-popup-close" id="whatsapp-popup-close">
+          &times;
+        </button>
+        <div class="whatsapp-popup-header">
+          <div class="whatsapp-popup-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3 class="whatsapp-popup-title">Atendimento via WhatsApp</h3>
+        </div>
+        <p class="whatsapp-popup-subtitle">
+          Estamos prontos para atender e tirar todas as suas dúvidas!
+        </p>
+        <div class="whatsapp-popup-message">
+          Olá! Gostaria de saber mais sobre os serviços da 3R Turismo.
+        </div>
+        <button class="whatsapp-popup-btn" id="whatsapp-popup-btn">
+          <i class="fab fa-whatsapp"></i> Iniciar conversa
+        </button>
+      </div>
+    </div>
+
     <!-- Footer -->
+
     <footer class="footer">
       <p>Desenvolvido por Paulo Vinícius – Todos os direitos reservados</p>
     </footer>
+
     <script defer src="./JavaScript/main.js"></script>
   </body>
 </html>
