@@ -63,7 +63,7 @@ popupOverlay.addEventListener("click", function (e) {
 });
 
 popupSend.addEventListener("click", function () {
-  const phoneNumber = "5500000000000"; // troque pelo número real
+  const phoneNumber = "5543996048760"; // troque pelo número real
   const message = encodeURIComponent(
     "Olá! Gostaria de saber mais sobre os serviços da 3R Turismo."
   );
