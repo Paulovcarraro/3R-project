@@ -537,6 +537,7 @@ img {
   .menu-mobile {
     display: block;
   }
+
   .whatsapp-popup {
     padding: 20px;
   }
@@ -544,6 +545,7 @@ img {
   .whatsapp-popup-title {
     font-size: 18px;
   }
+
   .card-veiculo {
     max-width: 90%;
     height: auto;
@@ -563,12 +565,17 @@ img {
     padding: 0.4rem 0.8rem;
   }
 
+  /* AJUSTES PARA MOBILE - CONTATO */
   .contato-info {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
-  .dados {
+  .dados, .redes {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     text-align: center;
   }
 }
