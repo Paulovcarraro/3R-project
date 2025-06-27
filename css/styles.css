@@ -59,7 +59,7 @@ img {
 /* HERO */
 
 .hero {
-  background-color: #e7401b;
+  background-color: #a71930;
   color: #fff;
   padding: 8rem 2rem 4rem;
   text-align: center;
@@ -168,7 +168,7 @@ img {
 }
 
 .whatsapp-popup-title {
-  color: #e7401b;
+  color: #a71930;
   font-size: 20px;
   font-weight: 700;
   margin: 0;
@@ -243,7 +243,7 @@ img {
 }
 
 .filtro-btn {
-  background: #e7401b;
+  background: #a71930;
   color: #fff;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -255,7 +255,7 @@ img {
 
 .filtro-btn:hover,
 .filtro-btn.active {
-  background: #c83216;
+  background: #e7401b;
 }
 
 .veiculos-container {
@@ -300,7 +300,7 @@ img {
 }
 
 .card-veiculo .btn-saiba-mais {
-  background: #1f1f1f;
+  background: #a71930;
   color: #fff;
   border: none;
   width: 100%;
@@ -316,7 +316,7 @@ img {
 }
 
 .btn-ver-mais {
-  background: #e7401b;
+  background: #a71930;
   color: #fff;
   padding: 0.75rem 2rem;
   border: none;
@@ -329,7 +329,7 @@ img {
 }
 
 .btn-ver-mais:hover {
-  background: #c83216;
+  background: #e7401b;
 }
 
 /* MODAL */
@@ -420,7 +420,7 @@ img {
 
 .modal-thumbs img.active,
 .modal-thumbs img:hover {
-  border-color: #e7401b;
+  border-color:  #A71930;
 }
 
 .modal-info {
@@ -572,7 +572,8 @@ img {
     text-align: center;
   }
 
-  .dados, .redes {
+  .dados,
+  .redes {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
