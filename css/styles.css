@@ -289,7 +289,7 @@ img {
   transition: transform 0.3s ease;
 }
 
-.card-veiculo:hover img {
+.card-veiculo:hover {
   transform: scale(1.05);
 }
 
@@ -420,7 +420,7 @@ img {
 
 .modal-thumbs img.active,
 .modal-thumbs img:hover {
-  border-color:  #A71930;
+  border-color: #a71930;
 }
 
 .modal-info {
