@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3R Transporte</title>
+
     <link rel="stylesheet" href="./css/styles.css" />
 
     <script
@@ -53,20 +54,36 @@
       </p>
     </section>
 
-    <!-- Carrossel Veículos -->
+    <!-- NOVA SESSÃO VEÍCULOS -->
 
     <section class="veiculos" id="servicos">
-      <h2>Nossos Veículos</h2>
-      <div class="carousel">
-        <button class="carousel-btn prev">❮</button>
-        <div class="carousel-container">
-          <img src="img/onibus1.jpg" alt="Ônibus 1" class="carousel-img" />
-          <img src="img/van1.jpg" alt="Van 1" class="carousel-img" />
-          <img src="img/onibus2.jpg" alt="Ônibus 2" class="carousel-img" />
-        </div>
-        <button class="carousel-btn next">❯</button>
+      <h2 class="frota">Nossos Veículos</h2>
+      <div class="filtros-veiculos">
+        <button class="filtro-btn active" data-tipo="onibus">Ônibus</button>
+        <button class="filtro-btn" data-tipo="van">Vans</button>
       </div>
+      <div class="veiculos-container"></div>
+      <button id="ver-mais" class="btn-ver-mais">Ver mais</button>
     </section>
+
+    <!-- MODAL VEÍCULO -->
+
+    <div class="modal-veiculo" id="modal">
+      <div class="modal-conteudo">
+        <button class="modal-fechar" id="modal-close">&times;</button>
+        <h3 id="modal-title"></h3>
+        <div class="modal-img">
+          <img
+            id="modal-img-principal"
+            src=""
+            alt="Imagem veículo"
+            class="modal-img-principal"
+          />
+        </div>
+        <div class="modal-thumbs" id="modal-thumbs"></div>
+        <ul class="modal-info" id="modal-info"></ul>
+      </div>
+    </div>
 
     <!-- Clientes -->
 
@@ -130,6 +147,8 @@
       <br />
       <p>&copy; 2025 3R Turismo - Todos os direitos reservados</p>
     </footer>
+
+    <!-- Scripts js -->
 
     <script defer src="./JavaScript/main.js"></script>
   </body>
