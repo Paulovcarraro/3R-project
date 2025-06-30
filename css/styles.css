@@ -435,7 +435,8 @@ img {
   font-size: 0.95rem;
 }
 
-/* CLIENTES */
+/* Sessão clientes */
+
 .clientes {
   padding: 4rem 2rem;
   background: #f1f1f1;
@@ -444,10 +445,34 @@ img {
 
 .clientes-logos {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.cliente-retangulo {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 220px; /* mais largo */
+  height: 100px; /* mais baixo */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+
+.cliente-retangulo:hover {
+  transform: scale(1.05);
+}
+
+.cliente-retangulo img {
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
 }
 
 /* CONTATO */
