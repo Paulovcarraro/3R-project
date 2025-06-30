@@ -497,6 +497,7 @@ img {
 .dados {
   flex: 1 1 250px;
   text-align: left;
+  cursor: pointer;
 }
 
 .dados p {
