@@ -454,9 +454,8 @@ img {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 220px; /* mais largo */
-  height: 100px; /* mais baixo */
-
+  width: 220px; 
+  height: 100px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -476,10 +475,11 @@ img {
 }
 
 /* CONTATO */
+
 .contato {
   padding: 4rem 2rem;
-  background: #1f1f1f;
-  color: #fff;
+  background: #d3d4d5;
+  color: #000;
   text-align: center;
 }
 
@@ -535,7 +535,7 @@ img {
 
 /* FOOTER */
 .footer {
-  background: #000;
+  background: #a71930;
   color: #fff;
   text-align: center;
   padding: 1rem;
