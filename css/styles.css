@@ -47,7 +47,7 @@ img {
 }
 
 .nav a:hover {
-  color: #e7401b;
+  color: #c40000;
 }
 
 .menu-mobile {
@@ -145,7 +145,7 @@ img {
 }
 
 .whatsapp-popup-close:hover {
-  color: #e7401b;
+  color: #c40000;
 }
 
 .whatsapp-popup-header {
@@ -213,6 +213,7 @@ img {
 }
 
 /* SOBRE */
+
 .sobre {
   padding: 4rem 2rem;
   background: #f9f9f9;
@@ -255,7 +256,7 @@ img {
 
 .filtro-btn:hover,
 .filtro-btn.active {
-  background: #e7401b;
+  background: #c40000;
 }
 
 .veiculos-container {
@@ -312,7 +313,7 @@ img {
 }
 
 .card-veiculo .btn-saiba-mais:hover {
-  background: #333;
+  background: #c40000;
 }
 
 .btn-ver-mais {
@@ -329,10 +330,11 @@ img {
 }
 
 .btn-ver-mais:hover {
-  background: #e7401b;
+  background: #c40000;
 }
 
 /* MODAL */
+
 .modal-veiculo {
   position: fixed;
   top: 0;
@@ -454,8 +456,8 @@ img {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 220px; 
-  height: 100px; 
+  width: 220px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -516,7 +518,7 @@ img {
 }
 
 .redes a:hover {
-  background-color: #e7401b;
+  background-color: #c40000;
 }
 
 .dados {
@@ -534,6 +536,7 @@ img {
 }
 
 /* FOOTER */
+
 .footer {
   background: #a71930;
   color: #fff;
