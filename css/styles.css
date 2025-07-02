@@ -515,16 +515,17 @@ img {
   text-align: center;
   line-height: 45px;
   transition: background 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .redes a:hover {
+  transform: scale(1.25);
   background-color: #c40000;
 }
 
 .dados {
   flex: 1 1 250px;
   text-align: left;
-  cursor: pointer;
 }
 
 .dados p {
