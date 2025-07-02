@@ -535,6 +535,11 @@ img {
   margin-right: 0.5rem;
 }
 
+.dados p.email:hover,
+.dados p.endereco:hover {
+  color: #c40000;
+}
+
 /* FOOTER */
 
 .footer {
