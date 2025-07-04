@@ -8,16 +8,23 @@ menuToggle.addEventListener("click", () => {
 
 // === Popup WhatsApp 3R ===
 const btnWhatsHero = document.querySelector(".btn-whatsapp");
+const btnWhatsRodape = document.getElementById("btn-whatsapp-rodape"); // novo botão
 const popupOverlay = document.getElementById("whatsapp-popup-overlay");
 const popupClose = document.getElementById("whatsapp-popup-close");
 const popupSend = document.getElementById("whatsapp-popup-btn");
 
-btnWhatsHero.addEventListener("click", function (e) {
+// Função para abrir o popup
+function abrirPopupWhatsApp(e) {
   e.preventDefault();
   popupOverlay.classList.add("active");
   document.body.style.overflow = "hidden";
-});
+}
 
+// Eventos para abrir o popup
+btnWhatsHero.addEventListener("click", abrirPopupWhatsApp);
+btnWhatsRodape.addEventListener("click", abrirPopupWhatsApp);
+
+// Fechar popup
 popupClose.addEventListener("click", function () {
   popupOverlay.classList.remove("active");
   document.body.style.overflow = "";
@@ -30,6 +37,7 @@ popupOverlay.addEventListener("click", function (e) {
   }
 });
 
+// Botão "Iniciar conversa"
 popupSend.addEventListener("click", function () {
   const phoneNumber = "5543996048760";
   const message = encodeURIComponent(
@@ -40,4 +48,3 @@ popupSend.addEventListener("click", function () {
   popupOverlay.classList.remove("active");
   document.body.style.overflow = "";
 });
-
