@@ -1,9 +1,13 @@
-// Menu Mobile
 const menuToggle = document.getElementById("menu-toggle");
+const menuIcon = document.getElementById("menu-icon");
 const nav = document.querySelector(".nav");
 
 menuToggle.addEventListener("click", () => {
   nav.classList.toggle("active");
+
+  // Alterna entre fa-bars e fa-times
+  menuIcon.classList.toggle("fa-bars");
+  menuIcon.classList.toggle("fa-times");
 });
 
 // === Popup WhatsApp 3R ===
