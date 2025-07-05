@@ -71,8 +71,7 @@ function carregarVeiculos() {
   const mostrar = filtrados.slice(inicio, fim);
   mostrar.forEach((v) => container.appendChild(criarCard(v)));
   inicio = fim;
-  if (inicio >= filtrados.length) verMaisBtn.style.display = "none";
-  else verMaisBtn.style.display = "display: block";
+  verMaisBtn.style.display = inicio >= filtrados.length ? "none" : "block";
 }
 
 filtroBotoes.forEach((btn) => {
@@ -95,24 +94,30 @@ const modalImg = document.getElementById("modal-img-principal");
 const modalTitle = document.getElementById("modal-title");
 const modalThumbs = document.getElementById("modal-thumbs");
 const modalInfo = document.getElementById("modal-info");
+const btnPrev = document.getElementById("btn-prev");
+const btnNext = document.getElementById("btn-next");
+
+let fotoAtualIndex = 0;
+let fotosModal = [];
 
 function abrirModal(veiculo) {
   modalTitle.textContent = veiculo.modelo;
-  modalImg.src = veiculo.fotos[0];
+  fotosModal = veiculo.fotos;
+  fotoAtualIndex = 0;
+  atualizarImagemModal();
+
   modalThumbs.innerHTML = "";
   veiculo.fotos.forEach((foto, i) => {
     const thumb = document.createElement("img");
     thumb.src = foto;
     if (i === 0) thumb.classList.add("active");
     thumb.addEventListener("click", () => {
-      modalImg.src = foto;
-      document
-        .querySelectorAll(".modal-thumbs img")
-        .forEach((t) => t.classList.remove("active"));
-      thumb.classList.add("active");
+      fotoAtualIndex = i;
+      atualizarImagemModal();
     });
     modalThumbs.appendChild(thumb);
   });
+
   modalInfo.innerHTML = `
     <li><strong>Ano:</strong> ${veiculo.ano}</li>
     <li><strong>Capacidade:</strong> ${veiculo.capacidade}</li>
@@ -122,9 +127,34 @@ function abrirModal(veiculo) {
     }</li>
     <li><strong>Carregador USB:</strong> ${veiculo.usb ? "Sim" : "Não"}</li>
   `;
+
   modal.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
+
+function atualizarImagemModal() {
+  modalImg.style.opacity = 0;
+  setTimeout(() => {
+    modalImg.src = fotosModal[fotoAtualIndex];
+    modalImg.onload = () => {
+      modalImg.style.opacity = 1;
+    };
+
+    document.querySelectorAll(".modal-thumbs img").forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === fotoAtualIndex);
+    });
+  }, 150);
+}
+
+btnPrev.addEventListener("click", () => {
+  fotoAtualIndex = (fotoAtualIndex - 1 + fotosModal.length) % fotosModal.length;
+  atualizarImagemModal();
+});
+
+btnNext.addEventListener("click", () => {
+  fotoAtualIndex = (fotoAtualIndex + 1) % fotosModal.length;
+  atualizarImagemModal();
+});
 
 modalClose.addEventListener("click", fecharModal);
 modal.addEventListener("click", (e) => {
@@ -136,5 +166,5 @@ function fecharModal() {
   document.body.style.overflow = "auto";
 }
 
-// Carregar inicialmente
+// Inicial
 carregarVeiculos();
