@@ -1,13 +1,22 @@
+// Scrip para Menu Hamburguer apenas em Mobile
 const menuToggle = document.getElementById("menu-toggle");
 const menuIcon = document.getElementById("menu-icon");
 const nav = document.querySelector(".nav");
 
 menuToggle.addEventListener("click", () => {
   nav.classList.toggle("active");
+  menuToggle.classList.toggle("active");
 
-  // Alterna entre fa-bars e fa-times
-  menuIcon.classList.toggle("fa-bars");
-  menuIcon.classList.toggle("fa-times");
+  // Troca suave de ícone
+  setTimeout(() => {
+    if (menuIcon.classList.contains("fa-bars")) {
+      menuIcon.classList.remove("fa-bars");
+      menuIcon.classList.add("fa-times");
+    } else {
+      menuIcon.classList.remove("fa-times");
+      menuIcon.classList.add("fa-bars");
+    }
+  }, 150); // Tempo sincronizado com o CSS (180deg)
 });
 
 // === Popup WhatsApp 3R ===

@@ -50,10 +50,36 @@ img {
   color: #c40000;
 }
 
+/* Botão hamburguer com FontAwesome */
+
 .menu-mobile {
   display: none;
-  font-size: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #c40000;
   cursor: pointer;
+  z-index: 2001;
+  transition: transform 0.3s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* Remove efeito em mobile */
+}
+
+/* Remove o contorno azul/roxo ao clicar */
+.menu-mobile:focus,
+.menu-mobile i:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Ícone do FontAwesome animado */
+#menu-icon {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Quando ativo, o ícone gira */
+.menu-mobile.active #menu-icon {
+  transform: rotate(180deg);
 }
 
 /* HERO */
@@ -552,27 +578,40 @@ img {
 }
 
 /* RESPONSIVO */
+
 @media (max-width: 768px) {
   .nav {
     display: none;
     flex-direction: column;
-    background: #fff;
+    background: #ffffffee;
     position: absolute;
     top: 70px;
-    right: 0;
+    right: 1rem;
     padding: 1rem;
     width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
   }
 
   .nav.active {
     display: flex;
   }
 
+  .nav a {
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .nav a:hover {
+    background-color: #f4f4f4;
+  }
+
   .menu-mobile {
     display: block;
   }
-
   .whatsapp-popup {
     padding: 20px;
   }
