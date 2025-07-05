@@ -490,6 +490,7 @@ img {
   padding: 1rem;
   box-sizing: border-box;
   transition: transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent; /* remove efeito ao tocar */
 }
 
 .cliente-retangulo:hover {
@@ -500,6 +501,9 @@ img {
   max-width: 100%;
   max-height: 80%;
   object-fit: contain;
+  pointer-events: none; /* impede que o clique seja capturado pela imagem */
+  user-select: none; /* impede seleção acidental */
+  -webkit-user-drag: none; /* evita que a imagem seja arrastada no mobile */
 }
 
 /* CONTATO */
