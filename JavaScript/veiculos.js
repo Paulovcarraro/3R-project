@@ -4,7 +4,11 @@ const veiculos = [
   {
     tipo: "onibus",
     modelo: "Ônibus Executivo Marcopolo",
-    fotos: ["img/onibus1.jpg", "img/onibus1-2.jpg", "img/onibus1-3.jpg"],
+    fotos: [
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+    ],
     ano: "2020",
     capacidade: "46 passageiros",
     banheiro: true,
