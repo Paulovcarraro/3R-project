@@ -1,9 +1,9 @@
-// JavaScript para gerenciamento de veículos
-
+// Adicione fabricante nos objetos veiculos:
 const veiculos = [
   {
     tipo: "onibus",
-    modelo: "Ônibus Executivo Marcopolo G6 1050 Scania",
+    modelo: "Ônibus Executivo G6 1050 ",
+    fabricante: "Marcopolo/Scania",
     fotos: [
       "./Images/3R Logo.png",
       "./Images/3R Logo.png",
@@ -17,18 +17,31 @@ const veiculos = [
   },
   {
     tipo: "onibus",
-    modelo: "Ônibus Executivo Marcopolo G6 1050 Scania",
-    fotos: ["img/onibus2.jpg", "img/onibus2-2.jpg"],
+    modelo: "Ônibus Executivo G6 1050 ",
+    fabricante: "Marcopolo/Scania",
+    fotos: [
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+    ],
     ano: "2007",
     capacidade: "46 passageiros",
     banheiro: true,
     arCondicionado: true,
     usb: false,
   },
+
+  // Vans
+
   {
     tipo: "van",
     modelo: "Van Master",
-    fotos: ["img/van1.jpg", "img/van1-2.jpg"],
+    fabricante: "Renault",
+    fotos: [
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+    ],
     ano: "2012",
     capacidade: "16 passageiros",
     banheiro: false,
@@ -38,7 +51,12 @@ const veiculos = [
   {
     tipo: "van",
     modelo: " Van Ducato",
-    fotos: ["img/van2.jpg", "img/van2-2.jpg"],
+    fabricante: "Fiat",
+    fotos: [
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+      "./Images/3R Logo.png",
+    ],
     ano: "2008",
     capacidade: "15 passageiros",
     banheiro: false,
@@ -122,15 +140,27 @@ function abrirModal(veiculo) {
     modalThumbs.appendChild(thumb);
   });
 
-  modalInfo.innerHTML = `
+  // Monta as informações, agora usando veiculo.fabricante separado do modelo
+  let infoHTML = `
+    <li><strong>Fabricante:</strong> ${veiculo.fabricante}</li>  <!-- fabricante acima do ano -->
     <li><strong>Ano:</strong> ${veiculo.ano}</li>
     <li><strong>Capacidade:</strong> ${veiculo.capacidade}</li>
-    <li><strong>Banheiro:</strong> ${veiculo.banheiro ? "Sim" : "Não"}</li>
+  `;
+
+  if (veiculo.tipo !== "van") {
+    infoHTML += `<li><strong>Banheiro:</strong> ${
+      veiculo.banheiro ? "Sim" : "Não"
+    }</li>`;
+  }
+
+  infoHTML += `
     <li><strong>Ar-condicionado:</strong> ${
       veiculo.arCondicionado ? "Sim" : "Não"
     }</li>
     <li><strong>Carregador USB:</strong> ${veiculo.usb ? "Sim" : "Não"}</li>
   `;
+
+  modalInfo.innerHTML = infoHTML;
 
   modal.style.display = "flex";
   document.body.style.overflow = "hidden";
