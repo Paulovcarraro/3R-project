@@ -11,8 +11,73 @@
       media="screen"
       href="./css/sobre.css"
     />
+
+    <script
+      src="https://kit.fontawesome.com/e7b202391b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
-    <h1>Sobre a 3R</h1>
+    <header class="header">
+      <img src="./Images/3R Logo.png" alt="Logo 3R" class="logo" />
+      <nav class="nav" id="nav-menu">
+        <a href="./index.html">Início</a>
+        <a href="./sobre.html" class="active">A Empresa</a>
+        <a href="./index.html#servicos">Frota</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="menu-mobile" id="menu-toggle" aria-label="Abrir menu">
+        <i class="fas fa-bars" id="menu-icon"></i>
+      </button>
+    </header>
+
+    <main>
+      <section class="sobre-completo">
+        <h1>Sobre a 3R Turismo</h1>
+
+        <p>
+          Fundada há mais de 10 anos, a 3R Transporte se destaca pela excelência
+          em serviços de transporte, prezando sempre pela segurança, conforto e
+          pontualidade. Nossa equipe especializada é treinada constantemente e
+          nossos veículos são modernos, garantindo uma experiência única para
+          nossos clientes.
+        </p>
+
+        <p>
+          Priorizamos a sustentabilidade e inovação, buscando sempre melhorias e
+          adaptações para atender às demandas do mercado com responsabilidade e
+          eficiência.
+        </p>
+
+        <img src="./Images/frota.jpg" alt="Nossa frota moderna" />
+
+        <p>
+          Além disso, temos uma história de comprometimento com a comunidade,
+          sempre apoiando iniciativas locais e contribuindo para o
+          desenvolvimento da região.
+        </p>
+      </section>
+
+      <section class="contato" id="contato">
+        <h2>Contato</h2>
+        <p>Telefone: (xx) xxxx-xxxx</p>
+        <p>Email: contato@3rturismo.com.br</p>
+        <p>
+          Siga-nos:
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Scripts js -->
+
+    <script src="./JavaScript/sobre.js"></script>
   </body>
 </html>

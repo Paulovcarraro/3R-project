@@ -1,6 +1,243 @@
-h1{
-    display: flex;
-    justify-content: center;
-    color: #a71930;
-    font-size: large;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* HEADER */
+.header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 50px;
+}
+
+/* Menu desktop */
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  position: relative; /* importante para o ::after */
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px; /* espaço para o underline */
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #c40000;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.nav a:hover {
+  color: #c40000;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Botão hamburguer */
+
+.menu-mobile {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #c40000;
+  cursor: pointer;
+  z-index: 2100;
+  transition: transform 0.3s ease;
+}
+
+#menu-icon {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito de rotação no ícone */
+.menu-mobile.active #menu-icon {
+  transform: rotate(180deg);
+}
+
+/* Fundo escurecido */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+}
+
+/* Conteúdo principal da seção sobre */
+
+.sobre-completo {
+  max-width: 800px;
+  margin: 8rem auto 3rem; /* antes era 2rem, agora 6rem para descolar do header */
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(167, 25, 48, 0.4);
+  text-align: center;
+}
+
+.sobre-completo h1 {
+  font-size: 2.5rem;
+  color: #a71930;
+  margin-bottom: 1.5rem;
+}
+
+.sobre-completo p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.3rem;
+}
+
+.sobre-completo img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 1.5rem 0 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contato */
+
+.contato {
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.contato h2 {
+  color: #a71930;
+  margin-bottom: 1rem;
+}
+
+.contato p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.contato a {
+  color: #a71930;
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.contato a:hover {
+  color: #c40000;
+}
+
+/* Responsividade */
+
+/* Tablets e dispositivos médios */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    position: fixed;
+    top: -100%; /* escondido acima da tela */
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding: 80px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease;
+    z-index: 2000;
+  }
+
+  .nav.active {
+    top: 0;
+  }
+
+  .nav a {
+    position: relative;
+    color: #000;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #c40000;
+    transition: width 0.4s ease;
+    border-radius: 2px;
+  }
+
+  .nav a.active {
+    color: #c40000;
+  }
+
+  .nav a.active::after {
+    width: 100%;
+  }
+
+  .menu-mobile {
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+
+  .sobre-completo {
+    padding: 1.5rem 2rem;
+    margin: 8rem 1rem 2rem;
+  }
+
+  .sobre-completo h1 {
+    font-size: 2rem;
+  }
+
+  .sobre-completo p {
+    font-size: 1rem;
+  }
+
+  .contato {
+    margin: 0 1rem 3rem;
+  }
 }
