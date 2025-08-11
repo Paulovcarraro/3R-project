@@ -112,10 +112,20 @@ img {
   text-align: center;
 }
 
-.sobre-completo h1 {
+.titulo-animado {
   font-size: 2.5rem;
   color: #a71930;
   margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .sobre-completo p {

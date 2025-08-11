@@ -259,29 +259,126 @@ img {
 /* SOBRE */
 
 .sobre {
-  padding: 4rem 2rem;
-  background: #f9f9f9;
-  text-align: center;
+  max-width: 1000px; /* um pouco mais largo */
+  width: 90vw; /* largura responsiva */
+  margin: 4rem auto;
+  padding: 2.5rem 2rem; /* menos padding para usar melhor o espaço */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: left; /* texto alinhado à esquerda */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  position: relative;
+  overflow: hidden;
 }
 
-.sobre h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* Título com animação */
+.titulo-animado {
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  padding-bottom: 8px;
+  color: #a71930;
+  cursor: default;
+  text-align: center;
+  width: 100%;
+}
+
+.titulo-animado span {
+  color: #c40000;
+}
+
+.titulo-animado::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #a71930;
+  animation: underline 1s ease 0.8s forwards;
+}
+
+/* Parágrafo */
+.sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem; /* menos margem para ficar mais próximo do botão */
+  text-align: left;
+  display: block;
 }
 
 .sobre p .continuar-lendo {
-  color: #a71930;
-  font-weight: bold;
+  position: relative; /* para o ::after se posicionar relativo ao botão */
+  display: block;
+  width: max-content;
+  margin: 1rem auto 0;
+  padding: 0.45rem 1.1rem;
+  background: #a71930;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 25px;
   text-decoration: none;
-  margin-left: 5px;
+  box-shadow: 0 4px 10px rgba(167, 25, 48, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
-.sobre p .continuar-lendo:hover {
-  color: #c40000;
-  text-decoration: underline;
+/* underline animado */
+.sobre p .continuar-lendo::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
 }
+
+.sobre p .continuar-lendo:hover::after,
+.sobre p .continuar-lendo:focus::after {
+  width: 70%;
+}
+
+.sobre p .continuar-lendo:hover,
+.sobre p .continuar-lendo:focus {
+  background-color: #c40000;
+  box-shadow: 0 6px 14px rgba(196, 0, 0, 0.5);
+  outline: none;
+  position: relative;
+}
+
+/* Animações keyframes */
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline {
+  to {
+    width: 60%;
+  }
+}
+
 
 /* NOVOS ESTILOS VEÍCULOS */
 
@@ -693,7 +790,27 @@ img {
   .menu-overlay.active {
     display: block;
   }
+  .sobre {
+    padding: 2rem 1.5rem;
+    max-width: 85%;
+  }
 
+  .titulo-animado {
+    font-size: 2rem;
+  }
+
+  .sobre p {
+    font-size: 1rem;
+    display: block; /* No mobile, deixa bloco pra botão ir abaixo */
+  }
+
+  .sobre p .continuar-lendo {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 1rem;
+    vertical-align: initial;
+  }
+  
   .whatsapp-popup {
     padding: 20px;
   }
