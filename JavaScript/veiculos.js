@@ -28,7 +28,7 @@ const veiculos = [
     capacidade: "46 passageiros",
     banheiro: true,
     arCondicionado: true,
-    usb: false,
+    usb: true,
   },
 
   // Vans

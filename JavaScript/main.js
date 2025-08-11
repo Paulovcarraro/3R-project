@@ -33,6 +33,20 @@ menuToggle.addEventListener("click", () => {
 // Fecha ao clicar fora (overlay)
 overlay.addEventListener("click", closeMenu);
 
+// Animação Underline mobile das Seções do Menu Hamburguer
+
+document.querySelectorAll(".nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    // Remove .active de todos
+    document
+      .querySelectorAll(".nav a")
+      .forEach((l) => l.classList.remove("active"));
+    // Adiciona .active no link clicado
+    link.classList.add("active");
+    // Não colocamos e.preventDefault() pra não bloquear a navegação
+  });
+});
+
 // === Popup WhatsApp 3R ===
 const btnWhatsHero = document.querySelector(".btn-whatsapp");
 const btnWhatsRodape = document.getElementById("btn-whatsapp-rodape"); // novo botão
