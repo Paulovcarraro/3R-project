@@ -17,6 +17,7 @@ img {
 }
 
 /* HEADER */
+
 .header {
   background: #fff;
   display: flex;
@@ -35,6 +36,7 @@ img {
 }
 
 /* Menu desktop */
+
 .nav {
   display: flex;
   gap: 1.5rem;
@@ -92,6 +94,7 @@ img {
 }
 
 /* Fundo escurecido */
+
 .menu-overlay {
   display: none;
   position: fixed;

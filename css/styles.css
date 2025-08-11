@@ -316,7 +316,7 @@ img {
   display: block;
 }
 
-.sobre p .continuar-lendo {
+.continuar-lendo {
   position: relative; /* para o ::after se posicionar relativo ao botão */
   display: block;
   width: max-content;
@@ -336,7 +336,7 @@ img {
 }
 
 /* underline animado */
-.sobre p .continuar-lendo::after {
+.continuar-lendo::after {
   content: "";
   position: absolute;
   bottom: 6px;
@@ -351,13 +351,13 @@ img {
   z-index: 1;
 }
 
-.sobre p .continuar-lendo:hover::after,
-.sobre p .continuar-lendo:focus::after {
+.continuar-lendo:hover::after,
+.continuar-lendo:focus::after {
   width: 70%;
 }
 
-.sobre p .continuar-lendo:hover,
-.sobre p .continuar-lendo:focus {
+.continuar-lendo:hover,
+.continuar-lendo:focus {
   background-color: #c40000;
   box-shadow: 0 6px 14px rgba(196, 0, 0, 0.5);
   outline: none;
@@ -378,7 +378,6 @@ img {
     width: 60%;
   }
 }
-
 
 /* NOVOS ESTILOS VEÍCULOS */
 
@@ -790,6 +789,7 @@ img {
   .menu-overlay.active {
     display: block;
   }
+  
   .sobre {
     padding: 2rem 1.5rem;
     max-width: 85%;
@@ -810,7 +810,7 @@ img {
     margin-top: 1rem;
     vertical-align: initial;
   }
-  
+
   .whatsapp-popup {
     padding: 20px;
   }
