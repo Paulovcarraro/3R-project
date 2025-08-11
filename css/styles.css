@@ -26,7 +26,7 @@ img {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 2000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -34,6 +34,7 @@ img {
   height: 50px;
 }
 
+/* Menu desktop */
 .nav {
   display: flex;
   gap: 1.5rem;
@@ -50,8 +51,7 @@ img {
   color: #c40000;
 }
 
-/* Botão hamburguer com FontAwesome */
-
+/* Botão hamburguer */
 .menu-mobile {
   display: none;
   background: none;
@@ -59,27 +59,26 @@ img {
   font-size: 1.8rem;
   color: #c40000;
   cursor: pointer;
-  z-index: 2001;
+  z-index: 2100;
   transition: transform 0.3s ease;
-  outline: none;
-  -webkit-tap-highlight-color: transparent; /* Remove efeito em mobile */
 }
 
-/* Remove o contorno azul/roxo ao clicar */
-.menu-mobile:focus,
-.menu-mobile i:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-/* Ícone do FontAwesome animado */
 #menu-icon {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Quando ativo, o ícone gira */
+/* Efeito de rotação no ícone */
 .menu-mobile.active #menu-icon {
   transform: rotate(180deg);
+}
+
+/* Fundo escurecido */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
 }
 
 /* HERO */
@@ -601,37 +600,41 @@ img {
 
 @media (max-width: 768px) {
   .nav {
-    display: none;
     flex-direction: column;
-    background: #ffffffee;
-    position: absolute;
-    top: 70px;
-    right: 1rem;
-    padding: 1rem;
-    width: 200px;
+    align-items: flex-start;
+    background: #fff;
+    position: fixed;
+    top: -100%; /* escondido acima da tela */
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding: 80px 20px 20px;
     border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease;
+    z-index: 2000;
   }
 
   .nav.active {
-    display: flex;
+    top: 0;
   }
 
   .nav a {
-    padding: 0.5rem;
-    border-radius: 6px;
-    font-size: 16px;
-    color: #000;
-  }
-
-  .nav a:hover {
-    background-color: #f4f4f4;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #f0f0f0;
   }
 
   .menu-mobile {
     display: block;
+    -webkit-tap-highlight-color: transparent;
   }
+
+  .menu-overlay.active {
+    display: block;
+  }
+
   .whatsapp-popup {
     padding: 20px;
   }
@@ -689,6 +692,7 @@ img {
   }
 
   /* AJUSTES PARA MOBILE - CONTATO */
+
   .contato-info {
     flex-direction: column;
     align-items: center;

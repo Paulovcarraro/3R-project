@@ -1,23 +1,37 @@
 // Scrip para Menu Hamburguer apenas em Mobile
 const menuToggle = document.getElementById("menu-toggle");
 const menuIcon = document.getElementById("menu-icon");
-const nav = document.querySelector(".nav");
+const nav = document.getElementById("nav-menu");
+const overlay = document.getElementById("menu-overlay");
+
+function openMenu() {
+  nav.classList.add("active");
+  menuToggle.classList.add("active");
+  overlay.classList.add("active");
+
+  menuIcon.classList.remove("fa-bars");
+  menuIcon.classList.add("fa-times");
+}
+
+function closeMenu() {
+  nav.classList.remove("active");
+  menuToggle.classList.remove("active");
+  overlay.classList.remove("active");
+
+  menuIcon.classList.remove("fa-times");
+  menuIcon.classList.add("fa-bars");
+}
 
 menuToggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  menuToggle.classList.toggle("active");
-
-  // Troca suave de ícone
-  setTimeout(() => {
-    if (menuIcon.classList.contains("fa-bars")) {
-      menuIcon.classList.remove("fa-bars");
-      menuIcon.classList.add("fa-times");
-    } else {
-      menuIcon.classList.remove("fa-times");
-      menuIcon.classList.add("fa-bars");
-    }
-  }, 150); // Tempo sincronizado com o CSS (180deg)
+  if (nav.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
+
+// Fecha ao clicar fora (overlay)
+overlay.addEventListener("click", closeMenu);
 
 // === Popup WhatsApp 3R ===
 const btnWhatsHero = document.querySelector(".btn-whatsapp");

@@ -32,22 +32,26 @@
 
   <body>
     <!-- Header -->
-
+     
     <header class="header">
       <img src="./Images/3R Logo.png" alt="Logo 3R" class="logo" />
-      <nav class="nav">
+
+      <!-- Menu que desce do topo -->
+      <nav class="nav" id="nav-menu">
         <a href="#hero-servicos">Serviços</a>
         <a href="./sobre.html">A Empresa</a>
         <a href="#servicos">Frota</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <!-- Botão  Menu Hamburguer ativo apenas em Mobile -->
-
+      <!-- Botão Menu Hamburguer -->
       <button class="menu-mobile" id="menu-toggle" aria-label="Abrir menu">
         <i class="fas fa-bars" id="menu-icon"></i>
       </button>
     </header>
+
+    <!-- Fundo escuro ao abrir menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
 
     <!-- Hero -->
 
