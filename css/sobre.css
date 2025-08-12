@@ -89,6 +89,7 @@ img {
 }
 
 /* Efeito de rotação no ícone */
+
 .menu-mobile.active #menu-icon {
   transform: rotate(180deg);
 }
@@ -107,12 +108,12 @@ img {
 
 .sobre-completo {
   max-width: 800px;
-  margin: 8rem auto 3rem; /* antes era 2rem, agora 6rem para descolar do header */
+  margin: 8rem auto 3rem;
   background: #fff;
   padding: 2rem 3rem;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(167, 25, 48, 0.4);
-  text-align: center;
+  text-align: justify;
 }
 
 .titulo-animado {
@@ -120,9 +121,12 @@ img {
   color: #a71930;
   margin-bottom: 1.5rem;
   opacity: 0;
+  text-align: center;
   transform: translateY(-20px);
   animation: fadeInUp 1s ease-out forwards;
 }
+
+/* Animação do  titulo */
 
 @keyframes fadeInUp {
   to {
