@@ -611,47 +611,116 @@ img {
   font-size: 0.95rem;
 }
 
-/* Sessão clientes */
+/* Sessão Clientes */
 
 .clientes {
   padding: 4rem 2rem;
-  background: #f1f1f1;
+  background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%);
   text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
 }
+
+.clientes h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.clientes-descricao {
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.6;
+}
+
+/* Grid dos logos */
 
 .clientes-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: start; /* impede todos aumentarem juntos */
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
+.animar {
+  animation: fadeSlideUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Card */
+
 .cliente-retangulo {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 220px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  transition: transform 0.2s ease;
-  -webkit-tap-highlight-color: transparent; /* remove efeito ao tocar */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 260px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .cliente-retangulo:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
 }
 
+/* Imagem */
+
 .cliente-retangulo img {
-  max-width: 100%;
-  max-height: 80%;
+  width: 100%;
+  height: 120px;
   object-fit: contain;
-  pointer-events: none; /* impede que o clique seja capturado pela imagem */
-  user-select: none; /* impede seleção acidental */
-  -webkit-user-drag: none; /* evita que a imagem seja arrastada no mobile */
+  background: #fff;
+  padding: 1rem;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Info */
+
+.cliente-info {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.cliente-info h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.3rem;
+  color: #2c3e50;
+}
+
+.cliente-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Card expandido */
+
+.cliente-retangulo.expanded .cliente-info {
+  max-height: 200px;
+  padding: 1rem;
+}
+
+/* Animação fadeSlideUp */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* CONTATO */
@@ -789,7 +858,7 @@ img {
   .menu-overlay.active {
     display: block;
   }
-  
+
   .sobre {
     padding: 2rem 1.5rem;
     max-width: 85%;
@@ -865,6 +934,14 @@ img {
   .modal-img .seta {
     font-size: 1.2rem;
     padding: 0.3rem 0.6rem;
+  }
+
+  .clientes h2 {
+    font-size: 2rem;
+  }
+
+  .cliente-retangulo img {
+    height: 100px;
   }
 
   /* AJUSTES PARA MOBILE - CONTATO */
