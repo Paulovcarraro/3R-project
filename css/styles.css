@@ -960,4 +960,12 @@ img {
     margin: 0 auto;
     text-align: center;
   }
+
+  .dados h3 {
+    text-align: center;
+  }
+
+  .dados p {
+    text-align: justify;
+  }
 }
