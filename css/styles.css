@@ -615,7 +615,7 @@ img {
 
 .clientes {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%);
+  background: linear-gradient(135deg, #f9fafb 0%, #f1f1f1 100%);
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   opacity: 0;
@@ -624,13 +624,13 @@ img {
 .clientes h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #2c3e50;
+  color: #a71930;
   font-weight: 700;
 }
 
 .clientes-descricao {
   font-size: 1.1rem;
-  color: #4b5563;
+  color: #a71930;
   max-width: 700px;
   margin: 0 auto 2.5rem auto;
   line-height: 1.6;
@@ -664,6 +664,7 @@ img {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* remove efeito ao tocar */
 }
 
 .cliente-retangulo:hover {
@@ -695,12 +696,12 @@ img {
 .cliente-info h3 {
   font-size: 1.1rem;
   margin: 0.5rem 0 0.3rem;
-  color: #2c3e50;
+  color: #a71930;
 }
 
 .cliente-info p {
   font-size: 0.9rem;
-  color: #555;
+  color: #333;
   margin-bottom: 1rem;
 }
 
