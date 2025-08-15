@@ -15,6 +15,8 @@
       href="./css/sobre.css"
     />
 
+    <link rel="stylesheet" href="./css/popup.css" />
+
     <script
       src="https://kit.fontawesome.com/e7b202391b.js"
       crossorigin="anonymous"
@@ -149,6 +151,32 @@
 
       <section class="contato" id="contato">
         <h2>Contato</h2>
+
+        <p class="contato-intro">
+          Leu sobre nossa história e achou interessante? Fazemos fretamento de
+          ônibus e vans para as cidades de:
+          <strong>Miraselva</strong>, <strong>Jaguapitã</strong>,
+          <strong>Prado Ferreira</strong>, <strong>Porecatu</strong>,
+          <strong>Bela Vista do Paraíso</strong>,
+          <strong>Florestópolis</strong>, <strong>Cambé</strong>,
+          <strong>Rolândia</strong>, <strong>Centenário do Sul</strong>,
+          <strong>Londrina</strong> e região. Clique abaixo para entrar em
+          contato conosco e nos siga nas redes sociais para ficar atualizado nas
+          nossas novidades.
+        </p>
+
+        <div class="contato-botoes">
+          <!-- Botão WhatsApp -->
+          <a id="btn-whatsapp-sobre" class="btn-contato">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+
+          <!-- Botão E-mail -->
+          <a href="mailto:contato@3rturismo.com.br" class="btn-contato email">
+            <i class="fas fa-envelope"></i> E-mail
+          </a>
+        </div>
+
         <p>Telefone: (xx) xxxx-xxxx</p>
         <p>Email: contato@3rturismo.com.br</p>
         <p>
@@ -159,13 +187,38 @@
           <a href="#" aria-label="Instagram"
             ><i class="fab fa-instagram"></i
           ></a>
-          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </p>
       </section>
     </main>
 
+    <!-- Popup do WhatsApp -->
+
+    <div class="whatsapp-popup-overlay" id="whatsapp-popup-overlay">
+      <div class="whatsapp-popup">
+        <button class="whatsapp-popup-close" id="whatsapp-popup-close">
+          &times;
+        </button>
+        <div class="whatsapp-popup-header">
+          <div class="whatsapp-popup-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3 class="whatsapp-popup-title">Atendimento via WhatsApp</h3>
+        </div>
+        <p class="whatsapp-popup-subtitle">
+          Estamos prontos para atender e tirar todas as suas dúvidas!
+        </p>
+        <div class="whatsapp-popup-message">
+          Olá! Gostaria de saber mais sobre os serviços da 3R Turismo.
+        </div>
+        <button class="whatsapp-popup-btn" id="whatsapp-popup-btn">
+          <i class="fab fa-whatsapp"></i> Iniciar conversa
+        </button>
+      </div>
+    </div>
+
     <!-- Scripts js -->
 
     <script src="./JavaScript/sobre.js"></script>
+    <script src="./JavaScript/popup.js"></script>
   </body>
 </html>
