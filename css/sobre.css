@@ -485,7 +485,7 @@ img {
   }
 
   .carousel-slide img {
-    object-fit: fill;
+    object-fit: contain;
   }
 
   .carousel-hint {
