@@ -141,6 +141,8 @@ img {
   margin: 1.3rem 0;
 }
 
+/* carousel */
+
 .carousel {
   position: relative;
   overflow: hidden;
@@ -311,6 +313,7 @@ img {
   border-radius: 5px;
   font-weight: bold;
   font-size: 1rem;
+  cursor: pointer;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
 }
