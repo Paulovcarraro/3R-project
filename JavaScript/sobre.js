@@ -48,7 +48,7 @@ document.querySelectorAll(".nav a").forEach((link) => {
   });
 });
 
-// Script para funcionamento do carousel de imagens 
+// Script para funcionamento do carousel de imagens
 
 document.querySelectorAll(".carousel").forEach((carousel) => {
   const track = carousel.querySelector(".carousel-track");
