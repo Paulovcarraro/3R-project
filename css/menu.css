@@ -1,0 +1,84 @@
+/* HEADER */
+
+.header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 50px;
+}
+
+/* Menu desktop */
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  position: relative; /* importante para o ::after */
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px; /* espaço para o underline */
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #c40000;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.nav a:hover {
+  color: #c40000;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Botão hamburguer */
+
+.menu-mobile {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #c40000;
+  cursor: pointer;
+  z-index: 2100;
+  transition: transform 0.3s ease;
+}
+
+#menu-icon {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito de rotação no ícone */
+.menu-mobile.active #menu-icon {
+  transform: rotate(180deg);
+}
+
+/* Fundo escurecido */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+}
