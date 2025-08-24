@@ -1,0 +1,64 @@
+/* CONTATO */
+
+.contato {
+  padding: 4rem 2rem;
+  background: #d3d4d5;
+  color: #000;
+  text-align: center;
+}
+
+.contato-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.redes {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.redes h3 {
+  margin-bottom: 1rem;
+}
+
+.redes a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 45px;
+  transition: background 0.3s;
+  transition: transform 0.3s ease;
+}
+
+.redes a:hover {
+  transform: scale(1.25);
+  background-color: #c40000;
+}
+
+.dados {
+  flex: 1 1 250px;
+  text-align: left;
+}
+
+.dados p {
+  margin: 0.5rem 0;
+}
+
+.dados i {
+  margin-right: 0.5rem;
+}
+
+.dados p.email:hover,
+.dados p.endereco:hover {
+  color: #c40000;
+}
