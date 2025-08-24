@@ -178,8 +178,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #a71930;
+  font-weight: 700;
 }
 
 .filtros-veiculos {
@@ -680,6 +682,10 @@ img {
 
   .whatsapp-popup-title {
     font-size: 18px;
+  }
+
+  .frota {
+    font-size: 2rem;
   }
 
   .card-veiculo {
