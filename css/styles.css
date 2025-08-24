@@ -16,6 +16,34 @@ img {
   display: block;
 }
 
+/* Animação fade-slide-up da página  */
+
+/* Estado inicial invisível */
+
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+/* Quando ativada, anima e mostra o elemento */
+
+.fade-slide-up.active {
+  visibility: visible;
+  animation: fadeSlideUp 1.2s forwards; /* animação mais lenta */
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* HERO */
 
 .hero {
@@ -505,18 +533,6 @@ img {
 .cliente-retangulo.expanded .cliente-info {
   max-height: 200px;
   padding: 1rem;
-}
-
-/* Animação fadeSlideUp */
-@keyframes fadeSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* CONTATO */

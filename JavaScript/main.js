@@ -1,25 +1,6 @@
-
-
-// Script de animação da seção clientes e de funcionamento dos cards
-
+// Script de funcionamento dos cards
 document.addEventListener("DOMContentLoaded", function () {
-  const clientesSection = document.querySelector(".clientes");
   const cards = document.querySelectorAll(".cliente-retangulo");
-
-  // Animação de entrada
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animar");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  observer.observe(clientesSection);
 
   // Expansão individual
   cards.forEach((card) => {
@@ -30,3 +11,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Animação fade-slide-up da página
+
+const fadeElements = document.querySelectorAll(".fade-slide-up");
+
+const fadeInOnScroll = () => {
+  fadeElements.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (elementTop < windowHeight - 50) {
+      el.classList.add("active");
+    }
+  });
+};
+
+window.addEventListener("scroll", fadeInOnScroll);
+window.addEventListener("load", fadeInOnScroll);
