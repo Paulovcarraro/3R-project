@@ -1,0 +1,174 @@
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    position: fixed;
+    top: -100%; /* escondido acima da tela */
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding: 80px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease;
+    z-index: 2000;
+  }
+
+  .nav.active {
+    top: 0;
+  }
+
+  .nav a {
+    position: relative;
+    color: #000;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #c40000;
+    transition: width 0.4s ease;
+    border-radius: 2px;
+  }
+
+  .nav a.active {
+    color: #c40000;
+  }
+
+  .nav a.active::after {
+    width: 100%;
+  }
+
+  .menu-mobile {
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+
+  .sobre {
+    padding: 2rem 1.5rem;
+    max-width: 85%;
+  }
+
+  .titulo-animado {
+    font-size: 2rem;
+  }
+
+  .sobre p {
+    font-size: 1rem;
+    display: block; /* No mobile, deixa bloco pra botão ir abaixo */
+  }
+
+  .sobre p .continuar-lendo {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 1rem;
+    vertical-align: initial;
+  }
+
+  .whatsapp-popup {
+    padding: 20px;
+  }
+
+  .whatsapp-popup-title {
+    font-size: 18px;
+  }
+
+  .frota {
+    font-size: 2rem;
+  }
+
+  .card-veiculo {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .modal-veiculo .modal-conteudo {
+    width: 95%;
+    padding: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-img {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .modal-img img.modal-img-principal {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    max-height: unset;
+  }
+
+  .modal-thumbs {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+  }
+
+  .modal-thumbs img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .modal-info li {
+    font-size: 0.9rem;
+  }
+
+  .modal-img .seta {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .clientes h2 {
+    font-size: 2rem;
+  }
+
+  .cliente-retangulo img {
+    height: 100px;
+  }
+
+  /* AJUSTES PARA MOBILE - CONTATO */
+
+  .contato-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dados,
+  .redes {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .dados h3 {
+    text-align: center;
+  }
+
+  .dados p {
+    text-align: justify;
+  }
+}
