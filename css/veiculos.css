@@ -19,6 +19,7 @@
 }
 
 .filtro-btn {
+  position: relative;
   background: #a71930;
   color: #fff;
   border: none;
@@ -26,12 +27,43 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* underline animado */
+.filtro-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover ou foco */
+.filtro-btn:hover::after,
+.filtro-btn:focus::after {
+  width: 70%;
+}
+
+/* Quando ativo (clicado) → underline sempre visível */
+.filtro-btn.active::after {
+  width: 70%;
 }
 
 .filtro-btn:hover,
+.filtro-btn:focus,
 .filtro-btn.active {
-  background: #c40000;
+  background-color: #c40000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  outline: none;
 }
 
 .veiculos-container {

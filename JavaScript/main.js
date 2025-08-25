@@ -29,3 +29,14 @@ const fadeInOnScroll = () => {
 
 window.addEventListener("scroll", fadeInOnScroll);
 window.addEventListener("load", fadeInOnScroll);
+
+// Animação underline dos botões de filtro de veiculos
+
+document.querySelectorAll(".filtro-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document
+      .querySelectorAll(".filtro-btn")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
