@@ -1,4 +1,4 @@
-// Script de funcionamento dos cards
+// Script de funcionamento dos cards dos clientes
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".cliente-retangulo");
 
