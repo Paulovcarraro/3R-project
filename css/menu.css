@@ -24,11 +24,11 @@
 }
 
 .nav a {
-  position: relative; /* importante para o ::after */
+  position: relative;
   color: #000;
   text-decoration: none;
   font-weight: bold;
-  padding-bottom: 5px; /* espaço para o underline */
+  padding-bottom: 5px;
   transition: color 0.3s ease;
 }
 
@@ -49,6 +49,15 @@
 }
 
 .nav a:hover::after {
+  width: 100%;
+}
+
+/* Link ativo */
+.nav a.active {
+  color: #c40000;
+}
+
+.nav a.active::after {
   width: 100%;
 }
 
