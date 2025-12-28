@@ -53,77 +53,298 @@ img {
   margin: 1.3rem 0;
 }
 
-/* carousel */
+/* CAROUSEL MODERNO  */
 
+/* CONTAINER */
 .carousel {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
+  border-radius: 18px;
+  background: #000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  isolation: isolate;
 }
 
+/* TRACK */
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
+/* SLIDE */
 .carousel-slide {
   position: relative;
   flex-shrink: 0;
   width: 100%;
-  height: 350px;
+  height: 360px;
+  overflow: hidden;
 }
 
+/* IMAGEM */
 .carousel-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1);
+  filter: brightness(0.95);
+  transition: transform 1.2s ease, filter 0.6s ease;
   display: block;
-  background-color: #000;
 }
 
-/* Legenda */
+/* ZOOM SUAVE AO HOVER */
+.carousel:hover .carousel-slide img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+/* ================================
+   LEGENDA MODERNA
+   ================================ */
 
 .carousel-caption {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
   color: #fff;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  backdrop-filter: blur(6px);
   box-sizing: border-box;
 }
 
-/* Indicativo de arrastar (mobile) */
+/* DICA DE ARRASTAR (MOBILE) */
 
 .carousel-hint {
-  display: none;
   position: absolute;
-  bottom: 15px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(50, 50, 50, 0.7));
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
   color: #fff;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   gap: 8px;
   animation: fadeHint 3s ease-in-out infinite;
   pointer-events: none;
   z-index: 5;
+}
+
+/* ================================
+   SETAS MODERNAS (GLASS)
+   ================================ */
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  z-index: 3;
+}
+
+.seta:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.seta.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.seta.prev {
+  left: 16px;
+}
+
+.seta.next {
+  right: 16px;
+}
+
+/* BOTÃO EXPANDIR */
+
+.expand-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 5;
+}
+
+.expand-btn:hover {
+  transform: scale(1.15) rotate(5deg);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* LIGHTBOX (MODAL) */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(30, 30, 30, 0.85),
+    rgba(0, 0, 0, 0.95)
+  );
+  backdrop-filter: blur(4px);
   display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1.5rem;
+  animation: lightboxFadeIn 0.4s ease forwards;
 }
 
-.carousel-hint i {
-  font-size: 1.1rem;
-  animation: arrowMove 1s infinite;
+/* CONTAINER */
+.lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: lightboxZoomIn 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animação para mensagem de "Arraste para o lado */
+/* IMAGEM */
+.lightbox-img {
+  max-width: 88vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: #000;
+  transition: transform 0.4s ease;
+}
+
+.lightbox-img:hover {
+  transform: scale(1.02);
+}
+
+/* LEGENDA */
+.lightbox-caption {
+  margin-top: 14px;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+}
+
+/* BOTÃO FECHAR */
+
+.lightbox-close {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.lightbox-close:hover {
+  transform: rotate(90deg) scale(1.15);
+  background: rgba(255, 77, 77, 0.4);
+}
+
+/* NAVEGAÇÃO (Setas) */
+
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  transform: translateY(-50%) scale(1.2);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ANIMAÇÕES */
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightboxZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
 @keyframes fadeHint {
   0%,
@@ -134,156 +355,6 @@ img {
   90% {
     opacity: 1;
   }
-}
-
-@keyframes arrowMove {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* Setas */
-
-.seta {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  z-index: 2;
-  transition: background 0.2s, opacity 0.3s;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.seta:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.seta.prev {
-  left: 10px;
-}
-.seta.next {
-  right: 10px;
-}
-
-.seta.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Botão expandir */
-.expand-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  padding: 0.4rem 0.6rem;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 3;
-  font-size: 1rem;
-}
-.expand-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Modal Lightbox */
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  padding: 1rem;
-}
-
-.lightbox-content {
-  position: relative;
-  max-width: 95vw;
-  max-height: 95vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-img {
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain; /* garante que não "quebre" imagens deitadas */
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
-}
-
-.lightbox-caption {
-  margin-top: 10px;
-  text-align: center;
-  color: #fff;
-}
-
-/* Botão fechar (fora da imagem, canto superior direito da tela) */
-.lightbox-close {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 2rem;
-  color: #fff;
-  z-index: 10000;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.lightbox-close:hover {
-  transform: rotate(90deg) scale(1.2); /* gira e aumenta um pouco */
-  color: #c40000;
-}
-
-/* Botões de navegação (desktop) */
-.lightbox-prev,
-.lightbox-next {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  border: none;
-  color: #fff;
-  font-size: 2.5rem;
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-  border-radius: 8px;
-  z-index: 10000;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.lightbox-prev {
-  left: 20px;
-}
-.lightbox-next {
-  right: 20px;
-}
-
-.lightbox-prev:hover,
-.lightbox-next:hover {
-  transform: translateY(-50%) scale(1.1); /* aumenta levemente */
-  background: rgba(255, 255, 255, 0.2); /* fica mais claro */
 }
 
 /* CONTATO */
