@@ -1,11 +1,33 @@
-/* CONTATO */
+/* CONTATO – FUNDO COM IMAGEM */
 
 .contato {
-  padding: 4rem 2rem;
-  background: #d3d4d5;
-  color: #000;
+  position: relative;
+  padding: 6rem 2rem;
+  background-image: url("../Images/3r-beto-carrero.jpg"); /* imagem da frota / estrada */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
   text-align: center;
+  overflow: hidden;
 }
+
+/* Overlay escuro */
+.contato::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* Conteúdo acima do overlay */
+.contato > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* CONTAINER */
 
 .contato-info {
   display: flex;
@@ -13,8 +35,10 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 2rem;
-  gap: 2rem;
+  gap: 3rem;
 }
+
+/* REDES SOCIAIS */
 
 .redes {
   flex: 1 1 250px;
@@ -22,43 +46,64 @@
 }
 
 .redes h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 .redes a {
-  display: inline-block;
-  width: 45px;
-  height: 45px;
-  margin: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0.6rem;
   border-radius: 50%;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.15);
   color: #fff;
   font-size: 1.5rem;
-  text-align: center;
-  line-height: 45px;
-  transition: background 0.3s;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
 }
 
 .redes a:hover {
   transform: scale(1.25);
-  background-color: #c40000;
+  background-color: #a71930;
 }
 
+/* DADOS DE CONTATO */
+
 .dados {
-  flex: 1 1 250px;
+  flex: 1 1 280px;
   text-align: left;
 }
 
+.dados h3 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
 .dados p {
-  margin: 0.5rem 0;
+  margin: 0.7rem 0;
+  font-size: 1rem;
 }
 
 .dados i {
-  margin-right: 0.5rem;
+  margin-right: 0.6rem;
+  color: #a71930;
+}
+
+/* Links */
+.dados a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .dados p.email:hover,
 .dados p.endereco:hover {
-  color: #c40000;
+  color: #a71930;
+  font-weight: bold;
 }
